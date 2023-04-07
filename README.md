@@ -169,7 +169,89 @@ create-react-app 같은 보일러플레이트코드(최소한의 변경으로 �
 
 
 
+4/7
+https://ux.stories.pe.kr/238
+https://ffoorreeuunn.tistory.com/200
+https://velog.io/@mannmae/React%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%83%88-%EC%9E%91%EC%97%85%ED%99%98%EA%B2%BD%EC%97%90-VSCode-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0
 
+
+
+
+
+https://velog.io/@stella6767/React%EC%99%80-Node.js%EC%9D%98-%EA%B4%80%EA%B3%84
+Node.js는 chrome v8 javascript엔진으로 빌드된 javascript 런타임환경
+React는 Dom을 조작할 수 있는 프론트엔드 프레임워크
+Node.js는 React.js를 더 쓰기 편하게 해주는 도구를 제공하는 오픈소스
+
+
+
+
+
+https://velog.io/@eungook/React%EC%99%80-Node.js%EC%9D%98-%EA%B4%80%EA%B3%84%EB%8A%94-%EC%AB%8C-%EA%B1%B4%EB%84%88%EA%B1%B4%EB%84%88%EC%97%90%EC%9A%94
+사실 React는 jQuery랑 더 닮았답니다.
+Node.js는 자바스크립트 런타임일 뿐, 결코 UI 혹은 HTML을 표현하지는 않습니다.
+React는 가상 DOM을 통해 UI를 만드는 라이브러리
+
+Node.js와 React 사이에는 webpack과 Babel이 있습니다.
+React를 통한 대규모 SPA(어떠한 웹 사이트의 전체 페이지를 하나의 페이지에 담아 동적으로 화면을 변경해 표시하는 기술) 개발을 위해서는
+
+몹시 많은 정적 파일이 필요하고, (.js, .css, .png 등) 이를 번들링할 필요가 있습니다.
+→ webpack을 사용합니다.
+
+ES6를 해석할 수 없는 IE11 등 비非 모던 웹 브라우저에 대한 지원이 필요합니다.
+→ Babel을 사용합니다.
+
+그럼 Node.js는 무엇인가요?
+Node.js는 자바스크립트 런타임 입니다. 그리고 어떤 라이브러리를 갖고 있습니다.
+
+웹브라우저에서 JavaScript가 해석되면, Web API를 통해서 웹브라우저에서 결과가 나타납니다.
+Node.js에서 JavaScript가 해석되면, libuv(비동기 입출력, 이벤트 기반에 초점을 맞춘 라이브러리)를 통해서 OS에서 결과가 나타납니다.
+
+그래서 Node.js를 통해 webpack과 Babel을 사용하면
+(이 과정을 보통 빌드한다고 하죠)
+React 코드가 compatible version of JavaScript로 바뀌고, 다시 bundle되어
+브라우저에 올리기만 하면 되는 결과물이 나타납니다.
+
+React의 의존성 관리는 npm을 사용하는게 가장 일반적 입니다.
+따라서 npm을 쓰려면 역시 Node.js가 필요하게 됩니다!
+
+그리고 React의 부트스트랩인 create-react-app을 사용하기 위해서!
+역시 Node.js가 필요합니다.
+
+
+
+
+https://chucoding.tistory.com/86
+결론부터 말하자면, React를 사용하기 위해 Node.js가 반드시 필요한 것은 아닙니다.
+그럼에도 왜 항상 React 뒤에는 Node.js가 따라 붙는 것일까요?
+그 이유는 Node.js가 React를 사용하기 더 쉽게 해주는 도구들을 내장하고 있는 오픈소스이자 JavaScript runtime environment이기 때문입니다.
+
+더 자세하게 설명하자면 Node.js는 설치하는 경우 NPM(Node Package Manager)이 같이 설치되는데
+이 NPM이란 것을 통해 React 개발에 필요한 다양한 모듈들을 다운받아 사용할 수 있습니다.
+
+그렇기 때문에 React개발자들은 다른 개발자들이 구현해 놓은 간편하고 필요한 모듈 및 라이브러리들을 다운받기 위해서 node.js를 설치해서 사용하는 것입니다.
+그렇다면 npm만 설치하면 되지 왜 굳이 번거롭게 node.js를 통해 npm을 설치하는 것일까요??
+물론, react는 클라이언트 기반 라이브러리기 때문에 npm만 설치하여도 react와 react-dom라이브러리를 사용할 수 있습니다.
+
+그러나 node.js가 있으면 바벨이라는 컴파일러 도구를 추가로 다운받아 자바스크립트 대신 JSX를 사용하는 것이 가능하기 때문입니다. 그렇다면 JSX가 무엇인가??
+JSX는 JavaScript를 확장한 문법
+
+jsx코드 (우리에게 익숙한 html코드로 개발할 수 있기 때문에 코딩이 쉬워진다)
+class Hello extends React.Component {
+  render() {
+    return <div>Hello world</div>;
+  }
+}
+
+js코드
+class Hello extends React.Component {
+  render() {
+    return React.createElement('div', null, `Hello world`);
+  }
+}
+
+바벨은 자바스크립트 es6 문법을 es5로 변환하는 기능을 갖고 있습니다.
+따라서 우리는 바벨을 통해 React를 다양한 브라우저 환경에서 실행시키는 것이 가능해집니다.
 
 
 
